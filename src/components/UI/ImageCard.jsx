@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-const ImageCard = ({ title, src, alt, width = 350, height = 500 }) => {
+const ImageCard = ({ title, src, alt, width = 220, height = 300 }) => {
   return (
     <Box
       sx={{

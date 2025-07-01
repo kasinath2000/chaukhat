@@ -1,21 +1,61 @@
-// src/components/UI/InfoCard.jsx
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-const InfoCard = ({ image, alt, description }) => {
+const InfoCard = ({ image, alt, name, role, address, email, phone }) => {
   return (
-    <Box mb={2} sx={{ border: "2px solid white", p: 1, borderRadius: 2 }}>
-      <img
+    <Box
+      sx={{
+        border: "1px solid #ccc",
+        borderRadius: 2,
+        p: 1.5,
+        mb: 2,
+        textAlign: "center",
+      }}
+    >
+      {/* Image */}
+      <Box
+        component="img"
         src={image}
         alt={alt}
-        style={{ width: "100%", height: "auto", borderRadius: 8 }}
+        sx={{
+          width: "100%",
+          height: 300,
+          objectFit: "cover", // Ensures cover fill
+          borderRadius: 2,
+          mb: 1.5,
+        }}
       />
-      <Typography
-        variant="body1"
-        sx={{ mt: 1, fontSize: 15, lineHeight: 1.8, color: "#210F37" }}
-      >
-        {description}
+
+      {/* Name */}
+      <Typography variant="subtitle1" fontWeight="bold">
+        {name}
       </Typography>
+
+      {/* Role */}
+      <Typography variant="body2" sx={{ whiteSpace: "pre-line", mt: 0.5 }}>
+        {role}
+      </Typography>
+
+      {/* Address */}
+      {address && (
+        <Typography variant="body2" sx={{ mt: 1 }}>
+          {address}
+        </Typography>
+      )}
+
+      {/* Email */}
+      {email && (
+        <Typography variant="body2" sx={{ mt: 1 }}>
+          ✉️ {email}
+        </Typography>
+      )}
+
+      {/* Phone */}
+      {phone && (
+        <Typography variant="body2" sx={{ mt: 0.5 }}>
+          📞 {phone}
+        </Typography>
+      )}
     </Box>
   );
 };
