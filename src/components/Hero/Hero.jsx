@@ -1,3 +1,152 @@
+// import React from "react";
+// import CustomBox from "../../components/UI/CustomBox";
+// import ImageCard from "../../components/UI/ImageCard";
+// import InfoCard from "../../components/UI/InfoCard";
+// import { Box, Typography, useMediaQuery } from "@mui/material";
+// import { useTheme } from "@mui/material/styles";
+// import img1 from "../../../src/assets/img1.jpg";
+// import img2 from "../../../src/assets/img2.jpg";
+// import p1 from "../../../src/assets/p1.jpg";
+// import p3 from "../../../src/assets/p3.jpg";
+// import LinkChipCard from "../../components/UI/LinkChipCard";
+// import HeroSlider from "../../components/HeroSlider";
+
+// const featuredItems = [
+//   { title: "Book Collection", src: img2, alt: "Book Collection" },
+//   { title: "Book Collection", src: img2, alt: "Book Collection" },
+//   { title: "Book Collection", src: img2, alt: "Book Collection" },
+//   { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+//   { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+//   { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+// ];
+
+// const editorInfo = [
+//   {
+//     image: p1,
+//     alt: "Editor 1",
+//     name: "नीरज छिलवार",
+//     role: `प्रधान संपादक एवं संस्थापक : चौखट पत्रिका (2025)\nसंपादक : वर्धा डायरी (2024)\nसृजनात्मक रचनाकार, रंगकर्मी, फिल्म निर्माता-निर्देशक`,
+//     address: "4033, गली नं 17, अजीत नगर, गांधी नगर, दिल्ली – 110031",
+//     email: "talk2neeraj92@gmail.com",
+//     phone: "8929995706 / 9822726080",
+//   },
+//   {
+//     image: p3,
+//     alt: "Editor 2",
+//     name: "डॉ. कल्पना पाठक",
+//     role: `संपादक चौखट पत्रिका\nसहायक प्राध्यापक, हिन्दी विभाग\nबी. एन. कॉलेज (स्वायत्त), धुबरी, असम`,
+//     email: "kalpanapathak@bncollege.co.in / jupitarapathak2014@gmail.com",
+//   },
+// ];
+
+// const Links = [
+//   { label: "संस्थापक", href: "/founder" },
+//   { label: "संरक्षक", href: "/editorial-board" },
+//   { label: " परामर्श मंडल", href: "/guide-board" },
+//   { label: "संपादक मण्डल", href: "/editorial-board" },
+//   { label: "विशेषज्ञ समिति", href: "/expert-committee" },
+//   { label: "सक्रिय सहयोगी सदस्य", href: "/active-members" },
+// ];
+
+// const Home = () => {
+//   const theme = useTheme();
+//   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+//   const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+
+//   return (
+//     <Box
+//       sx={{
+//         padding: 2,
+//         display: "flex",
+//         flexDirection: isMobile ? "column" : "row",
+//         justifyContent: "space-between",
+//         alignItems: "stretch",
+//         gap: 3,
+//         flexWrap: "nowrap",
+//       }}
+//     >
+//       {/* Left Sidebar */}
+//       <CustomBox
+//         sx={{
+//           width: isMobile ? "100%" : isTablet ? "30%" : "20%",
+//           backgroundColor: "#EAA64D",
+//           color: "#210F37",
+//         }}
+//       >
+//         <Typography variant="h6" fontWeight="bold" gutterBottom>
+//           प्रधान संपादक
+//         </Typography>
+
+//         {editorInfo.map((info, index) => (
+//           <InfoCard
+//             key={index}
+//             image={info.image}
+//             alt={info.alt}
+//             name={info.name}
+//             role={info.role}
+//             address={info.address}
+//             email={info.email}
+//             phone={info.phone}
+//           />
+//         ))}
+//       </CustomBox>
+
+//       {/* Center Section */}
+//       <CustomBox
+//         sx={{
+//           width: isMobile ? "100%" : isTablet ? "70%" : "60%",
+//           backgroundColor: "#EAA64D",
+//           color: "#210F37",
+//         }}
+//       >
+//         <Box
+//           sx={{
+//             display: "flex",
+//             gap: 2,
+//             justifyContent: "center",
+//             alignItems: "flex-start",
+//             flexWrap: "wrap",
+//             mt: 2,
+//             overflowY: "auto",
+//             maxHeight: "90vh",
+//             pr: 1,
+//           }}
+//         >
+//           {featuredItems.map((item, index) => (
+//             <ImageCard
+//               key={index}
+//               title={item.title}
+//               src={item.src}
+//               alt={item.alt}
+//               width={350}
+//               height={500}
+//             />
+//           ))}
+//         </Box>
+//       </CustomBox>
+
+//       {/* Right Sidebar */}
+//       <CustomBox
+//         sx={{
+//           width: isMobile ? "100%" : isTablet ? "100%" : "20%",
+//           backgroundColor: "#EAA64D",
+//           color: "#210F37",
+//         }}
+//       >
+//         <Typography variant="h6" fontWeight="bold" gutterBottom>
+//           चौखट परिवार
+//         </Typography>
+
+//         <Box display="flex" flexDirection="column" gap={1}>
+//           <LinkChipCard links={Links} />
+//         </Box>
+//       </CustomBox>
+//     </Box>
+//   );
+// };
+
+// export default Home;
+
 import React from "react";
 import CustomBox from "../../components/UI/CustomBox";
 import ImageCard from "../../components/UI/ImageCard";
@@ -9,11 +158,24 @@ import img2 from "../../../src/assets/img2.jpg";
 import p1 from "../../../src/assets/p1.jpg";
 import p3 from "../../../src/assets/p3.jpg";
 import LinkChipCard from "../../components/UI/LinkChipCard";
+import HeroSlider from "../../components/HeroSlider";
 
 const featuredItems = [
   { title: "Book Collection", src: img2, alt: "Book Collection" },
   { title: "Book Collection", src: img2, alt: "Book Collection" },
   { title: "Book Collection", src: img2, alt: "Book Collection" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
+  { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
   { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
   { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
   { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
@@ -36,6 +198,7 @@ const editorInfo = [
     role: `संपादक चौखट पत्रिका\nसहायक प्राध्यापक, हिन्दी विभाग\nबी. एन. कॉलेज (स्वायत्त), धुबरी, असम`,
     email: "kalpanapathak@bncollege.co.in / jupitarapathak2014@gmail.com",
   },
+  
 ];
 
 const Links = [
@@ -64,7 +227,7 @@ const Home = () => {
         flexWrap: "nowrap",
       }}
     >
-      {/* Left Sidebar */}
+      {/* Left Sidebar: Editor Info */}
       <CustomBox
         sx={{
           width: isMobile ? "100%" : isTablet ? "30%" : "20%",
@@ -75,29 +238,39 @@ const Home = () => {
         <Typography variant="h6" fontWeight="bold" gutterBottom>
           प्रधान संपादक
         </Typography>
-
         {editorInfo.map((info, index) => (
-          <InfoCard
-            key={index}
-            image={info.image}
-            alt={info.alt}
-            name={info.name}
-            role={info.role}
-            address={info.address}
-            email={info.email}
-            phone={info.phone}
-          />
+          <InfoCard key={index} {...info} />
         ))}
       </CustomBox>
 
-      {/* Center Section */}
+      {/* Center Section: Slider + Small Cards */}
       <CustomBox
         sx={{
           width: isMobile ? "100%" : isTablet ? "70%" : "60%",
           backgroundColor: "#EAA64D",
           color: "#210F37",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 2,
         }}
       >
+        {/* 1. Hero Slider */}
+        <HeroSlider
+          slides={[
+            {
+              title: "Book Collection",
+              src: img2,
+              alt: "Books",
+              link: "/books",
+            },
+            { title: "Coming Soon", src: img1, alt: "Coming", link: "/coming" },
+            { title: "More", src: img1, alt: "More", link: "/more" },
+            // Add up to 14 items here
+          ]}
+        />
+
+        {/* 2. Small Image Cards Below */}
         <Box
           sx={{
             display: "flex",
@@ -105,10 +278,10 @@ const Home = () => {
             justifyContent: "center",
             alignItems: "flex-start",
             flexWrap: "wrap",
-            mt: 2,
-            overflowY: "auto",
+            mt: 1,
+            width: "100%",
+             overflowY: "auto",
             maxHeight: "90vh",
-            pr: 1,
           }}
         >
           {featuredItems.map((item, index) => (
@@ -117,14 +290,14 @@ const Home = () => {
               title={item.title}
               src={item.src}
               alt={item.alt}
-              width={350}
-              height={500}
+              width={180}
+              height={260}
             />
           ))}
         </Box>
       </CustomBox>
 
-      {/* Right Sidebar */}
+      {/* Right Sidebar: Links */}
       <CustomBox
         sx={{
           width: isMobile ? "100%" : isTablet ? "100%" : "20%",
@@ -135,7 +308,6 @@ const Home = () => {
         <Typography variant="h6" fontWeight="bold" gutterBottom>
           चौखट परिवार
         </Typography>
-
         <Box display="flex" flexDirection="column" gap={1}>
           <LinkChipCard links={Links} />
         </Box>

@@ -1,13 +1,15 @@
-
-
-
 import React from "react";
-import { Box, Typography, Link, Stack, Divider,IconButton } from "@mui/material";
+import { Box, Typography, Divider, IconButton } from "@mui/material";
 import navItems from "../../data/navItems";
-import logo from "../../../src/assets/logo.png"; // adjust if needed
+import logo from "../../../src/assets/logo.png";
+import { Link as RouterLink } from "react-router-dom"; // ✅ React Router Link
+
+// MUI icons
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import TelegramIcon from "@mui/icons-material/Telegram";
 
 const Footer = () => {
   return (
@@ -28,48 +30,54 @@ const Footer = () => {
             <img
               src={logo}
               alt="Chaukhat Logo"
-              style={{ width: 40, height: 40, borderRadius: "50%", backgroundColor: "black" }}
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: "50%",
+                backgroundColor: "black",
+              }}
             />
             <Typography variant="h6" fontWeight="bold">
               chaukhat
             </Typography>
           </Box>
-          {/* <Divider sx={{ borderColor: "white", my: 1, width: "60px" }} /> */}
           <Typography variant="body2">
             A platform for culture, creativity, and collaboration.
           </Typography>
         </Box>
 
-        {/* Section 2 - Useful Links in Two Columns */}
+    
+      
+        {/* Section 2 - Useful Links in Three Columns */}
         <Box sx={{ flex: 1, minWidth: 250 }}>
           <Typography variant="h6">Useful Links</Typography>
           <Divider sx={{ borderColor: "white", my: 1, width: "60px" }} />
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
+              gridTemplateColumns: "repeat(3, 1fr)",
               gap: 1,
             }}
           >
             {navItems.map((item) => (
-              <Link
+              <RouterLink
                 key={item.label}
-                href={item.href}
-                underline="hover"
-                color="inherit"
-                sx={{
-                  "&:hover": { color: "#FAD59A" },
+                to={item.href}
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
                   fontSize: 14,
                 }}
+                className="hover:text-[#FAD59A] transition-colors"
               >
                 {item.label}
-              </Link>
+              </RouterLink>
             ))}
           </Box>
         </Box>
 
-    
-        <Box sx={{ flex: 1 }}>
+        {/* Section 3 - Social Icons */}
+        <Box sx={{ flex: 1, minWidth: 250 }}>
           <Typography variant="h6" fontWeight="bold" gutterBottom>
             Follow Us
           </Typography>
@@ -77,30 +85,53 @@ const Footer = () => {
 
           <Box sx={{ display: "flex", gap: 2 }}>
             <IconButton
-              href="https://www.facebook.com/profile.php?id=100066637445017"
+              href="https://wa.me/919999999999" // Replace with real number
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
             >
-              <FacebookIcon />
+              <WhatsAppIcon />
             </IconButton>
             <IconButton
-              href="#"
+              href="https://t.me/yourTelegramChannel" // Replace with real channel
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
+            >
+              <TelegramIcon />
+            </IconButton>
+            <IconButton
+              href="https://twitter.com/yourProfile" // Replace with real profile
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
             >
               <TwitterIcon />
             </IconButton>
             <IconButton
+              href="https://www.facebook.com/profile.php?id=100066637445017"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
+            >
+              <FacebookIcon />
+            </IconButton>
+            <IconButton
               href="https://www.instagram.com/chaukhat_25/"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
             >
               <InstagramIcon />
             </IconButton>
           </Box>
-          {/* Divider below Follow Us */}
         </Box>
       </Box>
 
       {/* Footer Bottom Line */}
-      <Box sx={{ textAlign: "center", py: 2, borderTop: "1px solid #ffffff33" }}>
+      <Box
+        sx={{ textAlign: "center", py: 2, borderTop: "1px solid #ffffff33" }}
+      >
         <Typography variant="body2">
           &copy; {new Date().getFullYear()} Chaukhat. All rights reserved.
         </Typography>
