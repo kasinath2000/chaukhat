@@ -54,7 +54,7 @@ const socialPlatforms = [
 
 const SocialLinks = () => {
   return (
-    <Box display="flex" gap={2} flexWrap="wrap">
+    <Box display="flex" flexWrap="wrap">
       {socialPlatforms.map((platform) => (
         <Tooltip key={platform.name} title={platform.name}>
           <IconButton

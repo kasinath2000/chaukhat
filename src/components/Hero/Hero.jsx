@@ -1,4 +1,3 @@
-
 import React from "react";
 import CustomBox from "../../components/UI/CustomBox";
 import ImageCard from "../../components/UI/ImageCard";
@@ -16,6 +15,7 @@ import slide3 from "../../../src/assets/slide.jpg";
 import slide0 from "../../../src/assets/slide0.jpg";
 import LinkChipCard from "../../components/UI/LinkChipCard";
 import HeroSlider from "../../components/HeroSlider";
+import SocialLinks from "../../components/SocialLinks/SocialLinks"; // ✅ import if not already
 
 const featuredItems = [
   { title: "Book Collection", src: img2, alt: "Book Collection" },
@@ -61,7 +61,6 @@ const slides = [
   // Add up to 14 slides as needed
 ];
 
-
 const editorInfo = [
   {
     image: p1,
@@ -79,7 +78,6 @@ const editorInfo = [
     role: `संपादक चौखट पत्रिका\nसहायक प्राध्यापक, हिन्दी विभाग\nबी. एन. कॉलेज (स्वायत्त), धुबरी, असम`,
     email: "kalpanapathak@bncollege.co.in / jupitarapathak2014@gmail.com",
   },
-  
 ];
 
 const Links = [
@@ -137,7 +135,7 @@ const Home = () => {
         }}
       >
         {/* 1. Hero Slider */}
-        <HeroSlider slides={slides}/>
+        <HeroSlider slides={slides} />
 
         {/* 2. Small Image Cards Below */}
         <Box
@@ -149,7 +147,7 @@ const Home = () => {
             flexWrap: "wrap",
             mt: 1,
             width: "100%",
-             overflowY: "auto",
+            overflowY: "auto",
             maxHeight: "90vh",
           }}
         >
@@ -166,8 +164,8 @@ const Home = () => {
         </Box>
       </CustomBox>
 
-      {/* Right Sidebar: Links */}
-      <CustomBox
+      {/* Right Sidebar */}
+      {/* <CustomBox
         sx={{
           width: isMobile ? "100%" : isTablet ? "100%" : "20%",
           backgroundColor: "#EAA64D",
@@ -180,7 +178,41 @@ const Home = () => {
         <Box display="flex" flexDirection="column" gap={1}>
           <LinkChipCard links={Links} />
         </Box>
-      </CustomBox>
+      </CustomBox> */}
+      {/* Right Sidebar */}
+      <Box
+        sx={{
+          width: isMobile ? "100%" : isTablet ? "100%" : "20%",
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+        }}
+      >
+        {/* ✅ Box 1: Social Links */}
+        <CustomBox sx={{ backgroundColor: "#EAA64D", color: "#210F37" }}>
+          <Typography variant="h6" fontWeight="bold" gutterBottom>
+            सोशल मीडिया
+          </Typography>
+          <SocialLinks />
+        </CustomBox>
+
+        {/* ✅ Box 2: चौखट परिवार */}
+        <CustomBox sx={{ backgroundColor: "#EAA64D", color: "#210F37" }}>
+          <Typography variant="h6" fontWeight="bold" gutterBottom>
+            चौखट परिवार
+          </Typography>
+          <LinkChipCard links={Links} />
+        </CustomBox>
+
+        {/* ✅ Box 3: हाल की अपडेट्स */}
+        <CustomBox sx={{ backgroundColor: "#F2C76E", color: "#210F37" }}>
+          <Typography variant="h6" fontWeight="bold" gutterBottom>
+            मुख्य सूचनाएं
+          </Typography>
+          <Typography variant="body2">• जुलाई अंक प्रकाशित</Typography>
+          <Typography variant="body2">• नई कार्यशाला की घोषणा</Typography>
+        </CustomBox>
+      </Box>
     </Box>
   );
 };
