@@ -165,7 +165,7 @@ const Footer = () => {
 
         {/* Right: External Link using MUI Link */}
         <Link
-          href="https://www.kasinathmandal.me"
+          href="https://personal-portfolio-pi-olive.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           underline="none"
