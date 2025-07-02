@@ -12,7 +12,7 @@ const resources = {
       journals: "Journals",
       media: "Media",
       news: "News",
-      newInfo: "New Info",
+      rulesbook: "Rules Book",
       thought: "Thought",
       allIssue: "All Issue",
       specialIssue: "Special Issue",
@@ -31,11 +31,11 @@ const resources = {
       journals: "जर्नल्स",
       media: "मीडिया",
       news: "समाचार",
-      newInfo: "नई जानकारी",
+      rulesbook: "नियमावली",
       thought: "विचार",
       allIssue: "सभी अंक",
       specialIssue: "विशेष अंक",
-      Archive: "संग्रहालय",
+      archive: "संग्रहालय", // ✅ lowercase fixed
       contactUs: "संपर्क करें",
       login: "व्यवस्थापक लॉगिन",
     },
@@ -44,7 +44,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "hi", // 👈 Default language
+  lng: "hi", // Default language
   fallbackLng: "en",
   interpolation: {
     escapeValue: false,

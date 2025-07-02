@@ -1,11 +1,17 @@
-import React from 'react'
+// src/Pages/Media.jsx
+import React from "react";
+import { Box, Typography } from "@mui/material";
+
+
+
 
 const Media = () => {
-  return (
-    <div>
-      Media
-    </div>
-  )
-}
 
-export default Media
+  return (
+    <Box>
+      do not need this box
+    </Box>
+  );
+};
+
+export default Media;

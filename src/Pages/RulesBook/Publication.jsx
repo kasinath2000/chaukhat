@@ -1,11 +1,12 @@
 import React from 'react'
-import CustomBox from '../components/UI/CustomBox'
+import CustomBox from '../../components/UI/CustomBox'
 import { Typography } from '@mui/material'
-const SpecialIssue = () => {
+
+const Publication = () => {
   return (
     <CustomBox
       sx={{
-        backgroundColor: "#EAA64D",
+        backgroundColor: "#EAD8A4",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -13,10 +14,10 @@ const SpecialIssue = () => {
       }}
     >
       <Typography variant="h6" sx={{ color: "#C83F12", fontWeight: "bold" }}>
-        कार्य प्रगति पर है।
+        Coming Soon...
       </Typography>
     </CustomBox>
   )
 }
 
-export default SpecialIssue
+export default Publication

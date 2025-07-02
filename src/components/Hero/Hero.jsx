@@ -157,6 +157,8 @@ import img1 from "../../../src/assets/img1.jpg";
 import img2 from "../../../src/assets/img2.jpg";
 import p1 from "../../../src/assets/p1.jpg";
 import p3 from "../../../src/assets/p3.jpg";
+import slide1 from "../../../src/assets/slide1.jpg";
+import slide2 from "../../../src/assets/slide2.jpg";
 import LinkChipCard from "../../components/UI/LinkChipCard";
 import HeroSlider from "../../components/HeroSlider";
 
@@ -180,6 +182,22 @@ const featuredItems = [
   { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
   { title: "Coming Soon...", src: img1, alt: "Coming Soon" },
 ];
+const slides = [
+  {
+    src: slide1,
+    alt: "Books",
+  },
+  {
+    src: slide2,
+    alt: "Coming",
+  },
+  {
+    src: img1,
+    alt: "More",
+  },
+  // Add up to 14 slides as needed
+];
+
 
 const editorInfo = [
   {
@@ -256,19 +274,7 @@ const Home = () => {
         }}
       >
         {/* 1. Hero Slider */}
-        <HeroSlider
-          slides={[
-            {
-              title: "Book Collection",
-              src: img2,
-              alt: "Books",
-              link: "/books",
-            },
-            { title: "Coming Soon", src: img1, alt: "Coming", link: "/coming" },
-            { title: "More", src: img1, alt: "More", link: "/more" },
-            // Add up to 14 items here
-          ]}
-        />
+        <HeroSlider slides={slides}/>
 
         {/* 2. Small Image Cards Below */}
         <Box

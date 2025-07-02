@@ -3,6 +3,7 @@ import { Box, Typography, Divider, IconButton } from "@mui/material";
 import navItems from "../../data/navItems";
 import logo from "../../../src/assets/logo.png";
 import { Link as RouterLink } from "react-router-dom"; // ✅ React Router Link
+import { Link } from "@mui/material"; // Make sure to import this
 
 // MUI icons
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -46,8 +47,6 @@ const Footer = () => {
           </Typography>
         </Box>
 
-    
-      
         {/* Section 2 - Useful Links in Three Columns */}
         <Box sx={{ flex: 1, minWidth: 250 }}>
           <Typography variant="h6">Useful Links</Typography>
@@ -130,11 +129,50 @@ const Footer = () => {
 
       {/* Footer Bottom Line */}
       <Box
-        sx={{ textAlign: "center", py: 2, borderTop: "1px solid #ffffff33" }}
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          justifyContent: "space-between",
+          alignItems: "center",
+          textAlign: "center",
+          py: 2,
+          px: 2,
+          borderTop: "1px solid #ffffff33",
+          gap: 1,
+          flexWrap: "wrap",
+        }}
       >
-        <Typography variant="body2">
+        {/* Left: Internal Links */}
+        <Box sx={{ display: "flex", gap: 2 }}>
+          <RouterLink
+            to="/privacy-policy"
+            style={{ color: "#fff", fontSize: 14, textDecoration: "none" }}
+          >
+            Privacy Policy
+          </RouterLink>
+          <RouterLink
+            to="/copyright-policy"
+            style={{ color: "#fff", fontSize: 14, textDecoration: "none" }}
+          >
+            Copyright Policy
+          </RouterLink>
+        </Box>
+
+        {/* Center: Copyright */}
+        <Typography variant="body2" sx={{ fontSize: 14 }}>
           &copy; {new Date().getFullYear()} Chaukhat. All rights reserved.
         </Typography>
+
+        {/* Right: External Link using MUI Link */}
+        <Link
+          href="https://www.kasinathmandal.me"
+          target="_blank"
+          rel="noopener noreferrer"
+          underline="none"
+          sx={{ color: "#fff", fontSize: 14 }}
+        >
+          Developed & Designed by Kasinath Mandal
+        </Link>
       </Box>
     </Box>
   );
