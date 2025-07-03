@@ -1,16 +1,70 @@
 import React from "react";
-import { Box, Typography, Divider, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Divider,
+  IconButton,
+  Link as MuiLink,
+} from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import navItems from "../../data/navItems";
 import logo from "../../../src/assets/logo.png";
-import { Link as RouterLink } from "react-router-dom"; // ✅ React Router Link
-import { Link } from "@mui/material"; // Make sure to import this
 
-// MUI icons
+// MUI Icons
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import EmailIcon from "@mui/icons-material/Email";
+
+// Dynamic social data
+const socialLinks = [
+  {
+    name: "WhatsApp",
+    icon: <WhatsAppIcon />,
+    link: "https://chat.whatsapp.com/GzuDwn1TPbdBW6wM5NnmMu",
+    color: "#25D366",
+  },
+  {
+    name: "Telegram",
+    icon: <TelegramIcon />,
+    link: "https://t.me/Chaukhat_25",
+    color: "#0088cc",
+  },
+  {
+    name: "Twitter",
+    icon: <TwitterIcon />,
+    link: "https://x.com/chaukhat_25",
+    color: "#1DA1F2",
+  },
+  {
+    name: "Facebook",
+    icon: <FacebookIcon />,
+    link: "https://www.facebook.com/profile.php?id=100066637445017",
+    color: "#1877F2",
+  },
+  {
+    name: "YouTube",
+    icon: <YouTubeIcon />,
+    link: "https://youtube.com/@thehindisansar?si=D7N6lmZoP4anXy6Q",
+    color: "#FF0000",
+  },
+  {
+    name: "Instagram",
+    icon: <InstagramIcon />,
+    link: "https://www.instagram.com/chaukhat_25/",
+    color: "#E1306C",
+  },
+
+  {
+    name: "Email",
+    icon: <EmailIcon />,
+    link: "mailto:chaukhathindipatrika@gmail.com",
+    color: "#EA4335",
+  },
+];
 
 const Footer = () => {
   return (
@@ -19,6 +73,7 @@ const Footer = () => {
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-between",
           flexWrap: "wrap",
           padding: 4,
@@ -47,7 +102,7 @@ const Footer = () => {
           </Typography>
         </Box>
 
-        {/* Section 2 - Useful Links in Three Columns */}
+        {/* Section 2 - Useful Links in 3 Columns */}
         <Box sx={{ flex: 1, minWidth: 250 }}>
           <Typography variant="h6">Useful Links</Typography>
           <Divider sx={{ borderColor: "white", my: 1, width: "60px" }} />
@@ -82,47 +137,29 @@ const Footer = () => {
           </Typography>
           <Divider sx={{ borderColor: "white", my: 1, width: "60px" }} />
 
-          <Box sx={{ display: "flex", gap: 2 }}>
-            <IconButton
-              href="https://wa.me/919999999999" // Replace with real number
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
-            >
-              <WhatsAppIcon />
-            </IconButton>
-            <IconButton
-              href="https://t.me/yourTelegramChannel" // Replace with real channel
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
-            >
-              <TelegramIcon />
-            </IconButton>
-            <IconButton
-              href="https://twitter.com/yourProfile" // Replace with real profile
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
-            >
-              <TwitterIcon />
-            </IconButton>
-            <IconButton
-              href="https://www.facebook.com/profile.php?id=100066637445017"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
-            >
-              <FacebookIcon />
-            </IconButton>
-            <IconButton
-              href="https://www.instagram.com/chaukhat_25/"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: "#fff", "&:hover": { color: "#FAD59A" } }}
-            >
-              <InstagramIcon />
-            </IconButton>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 2,
+              justifyContent: { xs: "center", sm: "flex-start" },
+            }}
+          >
+            {socialLinks.map((platform) => (
+              <IconButton
+                key={platform.name}
+                href={platform.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: platform.color,
+                  transition: "transform 0.2s",
+                  "&:hover": { transform: "scale(1.2)" },
+                }}
+              >
+                {platform.icon}
+              </IconButton>
+            ))}
           </Box>
         </Box>
       </Box>
@@ -164,15 +201,22 @@ const Footer = () => {
         </Typography>
 
         {/* Right: External Link using MUI Link */}
-        <Link
+        <MuiLink
           href="https://personal-portfolio-pi-olive.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           underline="none"
-          sx={{ color: "#fff", fontSize: 14 }}
+          sx={{
+            color: "#ccc", // subtle light gray on dark bg
+            fontSize: 14,
+            transition: "color 0.3s",
+            "&:hover": {
+              color: "#90CAF9", // light blue on hover
+            },
+          }}
         >
           Developed & Designed by Kasinath Mandal
-        </Link>
+        </MuiLink>
       </Box>
     </Box>
   );
