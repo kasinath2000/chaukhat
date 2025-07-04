@@ -61,6 +61,10 @@ import Membership from "./Pages/RulesBook/Membership";
 import Publication from "./Pages/RulesBook/Publication";
 import Confirmation from "./Pages/RulesBook/Confirmation";
 
+//notice 
+import AllNotices from "./Pages/AllNotices";
+import NoticePage from "./Pages/NoticePage";
+
 // Admin Dashboard
 import AdminLogin from "./Pages/Login/Login";
 import DashboardLayout from "./components/Admin/Layout/DashboardLayout";
@@ -154,6 +158,10 @@ function App() {
             <Route path="publication" element={<Publication />} />
             <Route path="confirmation" element={<Confirmation />} />
           </Route>
+          {/* 🆕 Notice Pages */}
+          <Route path="/all-notices" element={<AllNotices />} />
+          <Route path="/notice/:id" element={<NoticePage />} />
+
 
           {/* Admin Login & Dashboard */}
           <Route path="/admin-login" element={<AdminLogin />} />
