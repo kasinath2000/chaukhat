@@ -483,7 +483,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Chaukhat Logo"
-            className="h-10 w-10 rounded-full object-cover bg-black"
+            className="h-10 w-10 rounded-full object-cover "
           />
           <span className="text-4xl font-bold">चौखट</span>
         </div>
@@ -506,13 +506,13 @@ const Navbar = () => {
                     </span>
                   }
                 >
-                  <ul className="flex flex-col gap-1 rounded-md shadow-md p-2 min-w-[160px] z-50 bg-white">
+                  <ul className="flex flex-col gap-1 rounded-md shadow-md p-2 min-w-[160px] z-50 ">
                     {item.submenu.map((subItem) => (
                       <li key={subItem.label}>
                         <NavLink
                           to={subItem.href}
                           className={({ isActive }) =>
-                            `block px-2 py-1 rounded text-left hover:bg-pink-100 transition ${
+                            `block px-2 py-1 rounded text-left hover:bg-pink-400 transition ${
                               isActive
                                 ? "text-pink-600 font-semibold underline"
                                 : ""

@@ -27,6 +27,12 @@ import Patron from "./Pages/patron";
 import ExpertCommittee from "./Pages/ExpertCommittee";
 import ActiveMembers from "./Pages/ActiveMembers";
 
+
+//libery
+import AudioBooks from "./Pages/AudioBooks";
+import TextBooks from "./Pages/TextBooks";
+import BookReviews from "./Pages/BookReviews";
+
 // Thought Layout
 import Patwar from "./Pages/patwar";
 import Lantern from "./Pages/lantern";
@@ -71,6 +77,15 @@ import DashboardLayout from "./components/Admin/Layout/DashboardLayout";
 import Overview from "./Pages/Dashboard/Overview";
 import Users from "./Pages/Dashboard/Users";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
+// Admin Dashboard Pages
+import Notices from "./Pages/Dashboard/Notices";
+import Issues from "./Pages/Dashboard/Issues";
+import Media from "./Pages/Dashboard/Media";
+import Library from "./Pages/Dashboard/Library";
+import Archives from "./Pages/Dashboard/Archives";
+import Rules from "./Pages/Dashboard/Rules";
+import Messages from "./Pages/Dashboard/Messages";
+import Settings from "./Pages/Dashboard/Settings";
 
 function LayoutWrapper({ children }) {
   const location = useLocation();
@@ -100,6 +115,10 @@ function App() {
           <Route path="/libery/books" element={<div>Books Page</div>} />
           <Route path="/libery/magazines" element={<div>Magazines Page</div>} />
           <Route path="/libery/journals" element={<div>Journals Page</div>} />
+          <Route path="/libery/audio-books" element={<AudioBooks />} />
+<Route path="/libery/text-books" element={<TextBooks />} />
+<Route path="/libery/book-reviews" element={<BookReviews />} />
+
           <Route path="/thought" element={<Thought />} />
           <Route path="/allissue" element={<AllIssue />} />
           <Route path="/Specialissu" element={<SpecialIssue />} />
@@ -174,7 +193,15 @@ function App() {
             }
           >
             <Route index element={<Overview />} />
-            <Route path="users" element={<Users />} />
+  <Route path="users" element={<Users />} />
+  <Route path="notices" element={<Notices />} />
+  <Route path="issues" element={<Issues />} />
+  <Route path="media" element={<Media />} />
+  <Route path="library" element={<Library />} />
+  <Route path="archives" element={<Archives />} />
+  <Route path="rules" element={<Rules />} />
+  <Route path="messages" element={<Messages />} />
+  <Route path="settings" element={<Settings />} />
             {/* Add more dashboard pages here */}
           </Route>
         </Routes>

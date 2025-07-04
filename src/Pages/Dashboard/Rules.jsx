@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Users = () => {
+const Rules = () => {
   return (
     <div>
-      Users
-Users
+      Rules
+Rules
     </div>
   )
 }
 
-export default Users
+export default Rules

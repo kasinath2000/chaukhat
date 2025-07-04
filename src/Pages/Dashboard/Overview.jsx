@@ -1,8 +1,5 @@
-import React from 'react';
-import { Typography } from '@mui/material';
-
 const Overview = () => {
-  return <Typography variant="h4">Welcome to Admin Dashboard</Typography>;
+  return <div><h2>Dashboard Overview</h2></div>;
 };
 
-export default Overview;
+export default Overview; // ✅ This is required

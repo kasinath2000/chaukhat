@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Users = () => {
+const Media = () => {
   return (
     <div>
-      Users
-Users
+      Media
+Media
     </div>
   )
 }
 
-export default Users
+export default Media

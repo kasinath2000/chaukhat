@@ -1,15 +1,10 @@
 import React from 'react';
 import { Box, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import logo from '../../../assets/logo.png'; // adjust path based on location
+import logo from '../../../assets/logo.png';
+import sidebarItems from '../../../data/SidebarItems';
 
 const Sidebar = () => {
-  const items = [
-    { label: "Overview", to: "/dashboard" },
-    { label: "Users", to: "/dashboard/users" },
-    // Add more as needed
-  ];
-
   return (
     <Box
       sx={{
@@ -40,14 +35,25 @@ const Sidebar = () => {
             backgroundColor: '#000',
           }}
         />
-        <span style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>Admin</span>
+        <span style={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#fff' }}>Admin</span>
       </Box>
 
       {/* Menu List */}
       <List>
-        {items.map((item, idx) => (
+        {sidebarItems.map((item, idx) => (
           <ListItem key={idx} disablePadding>
-            <ListItemButton component={NavLink} to={item.to}>
+            <ListItemButton
+              component={NavLink}
+              to={item.to}
+              sx={{
+                '&.active': {
+                  bgcolor: '#FAD59A',
+                  color: '#210F37',
+                  fontWeight: 'bold',
+                },
+                color: '#fff',
+              }}
+            >
               <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
